@@ -4,9 +4,9 @@ $(document).ready(function() {
     post("../api/verify").done(function(data) {
       if(data.scope) {
         console.log(data)
-        console.log(data.scope)
         alert("Access Token is VALID");
       } else {
+        console.log(data)
         alert("Access Token is INVALID");
       }
     });
@@ -15,8 +15,10 @@ $(document).ready(function() {
   $("#refreshToken").on("click", function(){
     post("../api/refreshToken").done(function(data) {
       if(data.scope) {
+        console.log(data)
         alert("Access Token has been refreshed");
       } else {
+        console.log(data)
         alert("Access Token has not been refreshed");
       }
     });
@@ -24,6 +26,7 @@ $(document).ready(function() {
 
   $("#revoke").on("click", function(){
     post("../api/revoke").done(function(data) {
+      console.log(data)
       alert("Access Token has been revoked");
     });
   });
@@ -37,6 +40,7 @@ var post = function(url) {
     type: 'POST',
     url: url,
     success: function(value) {
+      console.log(value)
       def.resolve(value);
     },
     error: function(xhr) {
