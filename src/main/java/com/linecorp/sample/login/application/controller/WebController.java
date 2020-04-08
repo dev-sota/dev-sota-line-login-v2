@@ -108,7 +108,8 @@ public class WebController {
             logger.debug("id_token : " + token.id_token);
         }
         httpSession.setAttribute(ACCESS_TOKEN, token);
-        return "redirect:/success";
+        // return "redirect:/success";
+        return ;
     }
 
     /**
