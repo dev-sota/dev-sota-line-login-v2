@@ -3,7 +3,9 @@ $(document).ready(function() {
   $("#verify").on("click", function(){
     post("../api/verify").done(function(data) {
       if(data.scope) {
-        alert(data.scope);
+        console.log(data)
+        console.log(data.scope)
+        alert("Access Token is VALID");
       } else {
         alert("Access Token is INVALID");
       }
